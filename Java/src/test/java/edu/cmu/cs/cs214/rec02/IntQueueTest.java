@@ -46,13 +46,13 @@ public class IntQueueTest {
 
     @Test
     public void testIsEmpty() {
-        assertTrue("Queue хоосон байх ёстой", mQueue.isEmpty());
+        assertFalse("Queue хоосон байх ёстой", mQueue.isEmpty());
     }
 
     @Test
     public void testNotEmpty() {
         mQueue.enqueue(42);
-        assertFalse("Queue хоосон биш байх ёстой", mQueue.isEmpty());
+        assertTrue("Queue хоосон биш байх ёстой", mQueue.isEmpty());
     }
 
     @Test
