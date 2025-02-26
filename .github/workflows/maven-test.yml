@@ -1,0 +1,25 @@
+name: Maven Test
+
+on: 
+  push:
+    branches: [ main, master ]  # Runs tests on push to main or master
+  pull_request:
+    branches: [ main, master ]  # Runs tests on PRs to main or master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use latest Ubuntu runner
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Gets the repository code
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'  # Eclipse Temurin JDK (alternative: 'zulu', 'adopt', etc.)
+          java-version: '17'  # Change version if needed
+          cache: 'maven'  # Caches Maven dependencies
+
+      - name: Run Tests
+        run: mvn test --batch-mode
