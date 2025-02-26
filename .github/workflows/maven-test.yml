@@ -22,4 +22,4 @@ jobs:
           cache: 'maven'  # Caches Maven dependencies
 
       - name: Run Tests
-        run: mvn test --batch-mode
+        run: mvn test -f "/Users/mika/Desktop/lessons/buteelt/f.csa311.25b-lab04/Java/pom.xml"
